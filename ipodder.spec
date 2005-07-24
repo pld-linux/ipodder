@@ -3,8 +3,6 @@
 %define release 0.rc4.1%{_my_ext}
 %define __libtoolize /bin/true
 %define __cputoolize /bin/true
-
-
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
@@ -23,9 +21,6 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Requires:	wxPythonGTK
 Requires:	pyxmms pythonlib libxml2-python
 
-
-
-
 %description
 iPodder is technically a "Media Aggregator," a program that allows you
 to select and download audio files from anywhere on the Internet to
@@ -42,27 +37,23 @@ load them on to your iPod or other portable digital media player to
 play anytime you want.
 
 %prep
-rm -rf %buildroot
-
 %setup -q -n %{name}-linux
+
 %build
 
-
-
 %install
-
 rm -rf $RPM_BUILD_ROOT
-install -d %buildroot/%_bindir
-install -d %buildroot/%_datadir/%{name}
-install %{SOURCE1} -D %buildroot/%_bindir/%{name}
-cp -f -R * %buildroot/%_datadir/%{name}
-chmod 755 %buildroot/%_datadir/%{name}/ipodder/*.py
-rm -f %buildroot/%_datadir/%{name}/*.linux
-rm -f %buildroot/%_datadir/%{name}/LICENSE
+install -d $RPM_BUILD_ROOT/%{_bindir}
+install -d $RPM_BUILD_ROOT/%{_datadir}/%{name}
+install %{SOURCE1} -D $RPM_BUILD_ROOT/%{_bindir}/%{name}
+cp -f -R * $RPM_BUILD_ROOT/%{_datadir}/%{name}
+chmod 755 $RPM_BUILD_ROOT/%{_datadir}/%{name}/ipodder/*.py
+rm -f $RPM_BUILD_ROOT/%{_datadir}/%{name}/*.linux
+rm -f $RPM_BUILD_ROOT/%{_datadir}/%{name}/LICENSE
 
 #menus
-install -d %buildroot/%{_menudir}
-cat <<EOF >%buildroot/%{_menudir}/%{name}
+install -d $RPM_BUILD_ROOT/%{_menudir}
+cat <<EOF >$RPM_BUILD_ROOT/%{_menudir}/%{name}
 ?package(%{name}):command="%{_bindir}/%{name}" \
                   icon=%{name}.png \
                   needs="x11" \
@@ -71,20 +62,20 @@ cat <<EOF >%buildroot/%{_menudir}/%{name}
                   longtitle="%{summary}"
 EOF
 
-install %{SOURCE10} -D %buildroot/%{_miconsdir}/%{name}.png
-install %{SOURCE11} -D %buildroot/%{_iconsdir}/%{name}.png
-install %{SOURCE12} -D %buildroot/%{_liconsdir}/%{name}.png
+install %{SOURCE10} -D $RPM_BUILD_ROOT/%{_miconsdir}/%{name}.png
+install %{SOURCE11} -D $RPM_BUILD_ROOT/%{_iconsdir}/%{name}.png
+install %{SOURCE12} -D $RPM_BUILD_ROOT/%{_liconsdir}/%{name}.png
 
 %clean
-rm -rf %buildroot
+rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
 %doc README.linux NOTES.linux LICENSE Changelog.linux TODO.linux
 %attr(755,root,root) %{_bindir}/%{name}
-%_datadir/%{name}/*
+%{_datadir}/%{name}/*
 %_menudir/%{name}
-%_iconsdir/%{name}.png
+%{_iconsdir}/%{name}.png
 %_liconsdir/%{name}.png
 %_miconsdir/%{name}.png
 
