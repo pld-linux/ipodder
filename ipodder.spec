@@ -1,21 +1,18 @@
-# TODO: Name vs spec filename
+%define	_name	iPodder
 Summary:	IPodder - a Media Aggregator
 Summary(pl):	IPodder - agregator multimediów
-Name:		iPodder
-Version:	2.0
-Release:	0.rc4.1
+Name:		ipodder
+Version:	2.1
+Release:	1
 License:	GPL
 Group:		Applications/Sound
-Source0:	http://dl.sourceforge.net/ipodder/%{name}-linux-%{version}-rc4.tar.bz2
-Source1:	%{name}.sh
-Source10:	%{name}-16.png
-Source11:	%{name}-32.png
-Source12:	%{name}-48.png
+Source0:	http://dl.sourceforge.net/ipodder/%{_name}-linux-%{version}.tar.bz2
 URL:		http://ipodder.sourceforge.net/
 Requires:	python-libxml2
 Requires:	python-wxPython
 Requires:	python-xmms
-Requires:	pythonlib
+Requires:	python-modules
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -49,42 +46,33 @@ do iPoda czy innego przeno¶nego odtwarzacza plików multimedialnych w
 celu odtworzenia w dowolnej chwili.
 
 %prep
-%setup -q -n %{name}-linux
+%setup -q -n %{_name}-linux
 
 %build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_bindir}
-install -d $RPM_BUILD_ROOT%{_datadir}/%{name}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name}}
 
-install %{SOURCE1} -D $RPM_BUILD_ROOT%{_bindir}/%{name}
+install -D iPodder.png $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
+
 cp -f -R * $RPM_BUILD_ROOT%{_datadir}/%{name}
 chmod 755 $RPM_BUILD_ROOT%{_datadir}/%{name}/ipodder/*.py
 rm -f $RPM_BUILD_ROOT%{_datadir}/%{name}/*.linux
 rm -f $RPM_BUILD_ROOT%{_datadir}/%{name}/LICENSE
 
-#menus
-#install -d $RPM_BUILD_ROOT/%{_menudir}
-#cat <<EOF >$RPM_BUILD_ROOT/%{_menudir}/%{name}
-#?package(%{name}):command="%{_bindir}/%{name}" \
-#                  icon=%{name}.png \
-#                  needs="x11" \
-#                  section="Multimedia/Sound" \
-#                  title="Ipodder"\
-#                  longtitle="%{summary}"
-#EOF
-
-#install %{SOURCE10} -D $RPM_BUILD_ROOT/%{_miconsdir}/%{name}.png
-install %{SOURCE11} -D $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
-#install %{SOURCE12} -D $RPM_BUILD_ROOT/%{_liconsdir}/%{name}.png
+cat << EOF > $RPM_BUILD_ROOT/%{_bindir}/%{name}
+#!/bin/sh
+cd %{_datadir}/%{name}
+%{_bindir}/python iPodderGui.py
+EOF
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README.linux NOTES.linux LICENSE Changelog.linux TODO.linux
+%doc Changelog KNOWN-ISSUES NOTES README TODO
 %attr(755,root,root) %{_bindir}/%{name}
 %{_datadir}/%{name}
 %{_pixmapsdir}/%{name}.png
