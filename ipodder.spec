@@ -7,6 +7,7 @@ Release:	1
 License:	GPL
 Group:		Applications/Sound
 Source0:	http://dl.sourceforge.net/ipodder/%{_name}-linux-%{version}.tar.bz2
+Patch0:		%{name}-fixes.patch
 URL:		http://ipodder.sourceforge.net/
 Requires:	python-libxml2
 Requires:	python-wxPython
@@ -47,6 +48,7 @@ celu odtworzenia w dowolnej chwili.
 
 %prep
 %setup -q -n %{_name}-linux
+%patch0 -p1
 
 %build
 
