@@ -2,7 +2,7 @@
 Summary:	IPodder - a Media Aggregator
 Summary(pl):	IPodder - agregator multimediów
 Name:		ipodder
-Version:	2.1
+Version:	2.1.1
 Release:	1
 License:	GPL
 Group:		Applications/Sound
