@@ -2,12 +2,12 @@
 Summary:	IPodder - a Media Aggregator
 Summary(pl):	IPodder - agregator multimediów
 Name:		ipodder
-Version:	2.1.1
+Version:	2.1.9
 Release:	1
 License:	GPL
 Group:		Applications/Sound
 Source0:	http://dl.sourceforge.net/ipodder/%{_name}-linux-%{version}.tar.bz2
-# Source0-md5:	6f07e89024244dda633c4e0d50f3febb
+# Source0-md5:	163f0d9a5d783d370bd81e47e0e83d37
 Patch0:		%{name}-fixes.patch
 URL:		http://ipodder.sourceforge.net/
 Requires:	python-libxml2
@@ -48,7 +48,7 @@ do iPoda czy innego przeno¶nego odtwarzacza plików multimedialnych w
 celu odtworzenia w dowolnej chwili.
 
 %prep
-%setup -q -n %{_name}-linux
+%setup -q -n %{_name}_linux
 %patch0 -p1
 
 %build
@@ -75,7 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Changelog KNOWN-ISSUES NOTES README TODO
+%doc ChangeLog KNOWN-ISSUES NOTES README TODO
 %attr(755,root,root) %{_bindir}/%{name}
 %{_datadir}/%{name}
 %{_pixmapsdir}/%{name}.png

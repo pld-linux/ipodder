@@ -1,12 +1,11 @@
-diff -urN iPodder-linux.org/iPodderGui.py iPodder-linux/iPodderGui.py
---- iPodder-linux.org/iPodderGui.py	2005-07-26 07:27:35.000000000 +0200
-+++ iPodder-linux/iPodderGui.py	2005-07-30 16:12:46.763549288 +0200
-@@ -70,7 +70,7 @@
- TIMER_INTERVAL = 10000
+--- ./iPodderGui.py~	2005-09-24 17:18:15.000000000 +0300
++++ ./iPodderGui.py	2005-09-24 17:20:00.000000000 +0300
+@@ -17,7 +17,7 @@
+ # $Id$
  
  #Version check
--CHECK_VERSION = 2.1.1
-+CHECK_VERSION = "2.1.1"
+-CHECK_VERSION = 2.19
++CHECK_VERSION = "2.19"
  
- #GUI params -- Don't edit me.
- ID_EXIT = 101
+ import wx
+ import wx.xrc as xrc
