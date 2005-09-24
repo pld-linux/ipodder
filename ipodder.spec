@@ -7,6 +7,7 @@ Release:	1
 License:	GPL
 Group:		Applications/Sound
 Source0:	http://dl.sourceforge.net/ipodder/%{_name}-linux-%{version}.tar.bz2
+# Source0-md5:	6f07e89024244dda633c4e0d50f3febb
 Patch0:		%{name}-fixes.patch
 URL:		http://ipodder.sourceforge.net/
 Requires:	python-libxml2
@@ -66,7 +67,7 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/%{name}/LICENSE
 cat << EOF > $RPM_BUILD_ROOT/%{_bindir}/%{name}
 #!/bin/sh
 cd %{_datadir}/%{name}
-%{_bindir}/python iPodderGui.py
+exec %{_bindir}/python iPodderGui.py
 EOF
 
 %clean
