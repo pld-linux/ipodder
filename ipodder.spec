@@ -11,9 +11,9 @@ Source0:	http://dl.sourceforge.net/ipodder/%{_name}-linux-%{version}.tar.bz2
 Patch0:		%{name}-fixes.patch
 URL:		http://ipodder.sourceforge.net/
 Requires:	python-libxml2
+Requires:	python-modules
 Requires:	python-wxPython
 Requires:	python-xmms
-Requires:	python-modules
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -64,7 +64,7 @@ chmod 755 $RPM_BUILD_ROOT%{_datadir}/%{name}/ipodder/*.py
 rm -f $RPM_BUILD_ROOT%{_datadir}/%{name}/*.linux
 rm -f $RPM_BUILD_ROOT%{_datadir}/%{name}/LICENSE
 
-cat << EOF > $RPM_BUILD_ROOT/%{_bindir}/%{name}
+cat << EOF > $RPM_BUILD_ROOT%{_bindir}/%{name}
 #!/bin/sh
 cd %{_datadir}/%{name}
 exec %{_bindir}/python iPodderGui.py
