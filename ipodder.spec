@@ -1,6 +1,6 @@
 %define	_name	iPodder
 Summary:	IPodder - a Media Aggregator
-Summary(pl):	IPodder - agregator multimediów
+Summary(pl.UTF-8):   IPodder - agregator multimediÃ³w
 Name:		ipodder
 Version:	2.1.9
 Release:	1
@@ -32,19 +32,19 @@ your selected audio files using iTunes or other "jukebox" software, or
 load them on to your iPod or other portable digital media player to
 play anytime you want.
 
-%description -l pl
-iPodder jest technicznie "agregatorem multimediów" - programem
-umo¿liwiaj±cym wybór i ¶ci±ganie plików d¼wiêkowych z dowolnego
+%description -l pl.UTF-8
+iPodder jest technicznie "agregatorem multimediÃ³w" - programem
+umoÅ¼liwiajÄ…cym wybÃ³r i Å›ciÄ…ganie plikÃ³w dÅºwiÄ™kowych z dowolnego
 miejsca w Internecie na pulpit.
 
-iPodder czyni ten proces ³atwym pomagaj±c wybraæ pliki d¼wiêkowe
-spo¶ród tysiêcy ¼róde³ d¼wiêku w sieci i ¶ci±gaj±c te pliki na
-komputer. Po wybraniu ¼ród³a lub miejsca ¶ci±gnie pliki automatycznie
-w podanym czasie, a pliki bêd± oczekiwa³y na komputerze, przez co nie
-trzeba spêdzaæ du¿o czasu na rêcznym wybieraniu i oczekiwaniu na
-¶ci±gniêcie. Mo¿na odtwarzaæ wybrane pliki d¼wiêkowe przy u¿yciu
-iTunes lub innego programu w stylu "szafy graj±cej", albo wczytywaæ je
-do iPoda czy innego przeno¶nego odtwarzacza plików multimedialnych w
+iPodder czyni ten proces Å‚atwym pomagajÄ…c wybraÄ‡ pliki dÅºwiÄ™kowe
+spoÅ›rÃ³d tysiÄ™cy ÅºrÃ³deÅ‚ dÅºwiÄ™ku w sieci i Å›ciÄ…gajÄ…c te pliki na
+komputer. Po wybraniu ÅºrÃ³dÅ‚a lub miejsca Å›ciÄ…gnie pliki automatycznie
+w podanym czasie, a pliki bÄ™dÄ… oczekiwaÅ‚y na komputerze, przez co nie
+trzeba spÄ™dzaÄ‡ duÅ¼o czasu na rÄ™cznym wybieraniu i oczekiwaniu na
+Å›ciÄ…gniÄ™cie. MoÅ¼na odtwarzaÄ‡ wybrane pliki dÅºwiÄ™kowe przy uÅ¼yciu
+iTunes lub innego programu w stylu "szafy grajÄ…cej", albo wczytywaÄ‡ je
+do iPoda czy innego przenoÅ›nego odtwarzacza plikÃ³w multimedialnych w
 celu odtworzenia w dowolnej chwili.
 
 %prep
