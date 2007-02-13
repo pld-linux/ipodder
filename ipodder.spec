@@ -1,6 +1,6 @@
 %define	_name	iPodder
 Summary:	IPodder - a Media Aggregator
-Summary(pl.UTF-8):   IPodder - agregator multimediów
+Summary(pl.UTF-8):	IPodder - agregator multimediów
 Name:		ipodder
 Version:	2.1.9
 Release:	1
