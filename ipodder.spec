@@ -10,10 +10,11 @@ Source0:	http://dl.sourceforge.net/ipodder/%{_name}-linux-%{version}.tar.bz2
 # Source0-md5:	163f0d9a5d783d370bd81e47e0e83d37
 Patch0:		%{name}-fixes.patch
 URL:		http://ipodder.sourceforge.net/
+BuildRequires:	rpm-pythonprov
 Requires:	python-libxml2
 Requires:	python-modules
 Requires:	python-wxPython
-Requires:	python-xmms
+Requires:	python-xmm
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
