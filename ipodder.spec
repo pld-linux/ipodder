@@ -14,7 +14,7 @@ BuildRequires:	rpm-pythonprov
 Requires:	python-libxml2
 Requires:	python-modules
 Requires:	python-wxPython
-Requires:	python-xmm
+Suggests:	python-xmms
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
