@@ -50,7 +50,7 @@ celu odtworzenia w dowolnej chwili.
 
 %prep
 %setup -q -n %{_name}_linux
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 
